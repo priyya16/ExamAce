@@ -1,66 +1,145 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🎓 ExamAce — Exam & Career Information Portal
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+ExamAce is a web application designed to bring educational and career-related information together in one place. It organizes information about examinations, job opportunities, and examination results to help users explore relevant opportunities based on their interests and qualifications.
 
-## About Laravel
+## ✨ Project Overview
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Finding relevant examination notifications, job opportunities, and result announcements across different sources can be time-consuming. ExamAce aims to make this information easier to browse through a centralized web platform.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 🚀 Key Areas
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- **Examination Information** — Browse exam-related information and details.
+- **Job Listings** — Explore government and private job opportunities, including eligibility, location, vacancies, and application dates.
+- **Results Information** — Access result announcements and related links.
+- **Category Tags** — Organize information by categories such as engineering, medical, government, banking, and IT.
+- **User Accounts** — The project includes user-related functionality and qualification/preference fields.
+- **Database-Driven Content** — Store and organize examination, job, result, and category information.
 
-## Learning Laravel
+*Note: The feature list should be adjusted to match the screens and workflows that are currently functional in the application.*
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## 🛠️ Tech Stack
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+- **Backend:** PHP, Laravel
+- **Frontend:** Blade templates, JavaScript, CSS
+- **Database:** MySQL
+- **Dependency Management:** Composer, npm
+- **Build Tool:** Vite
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## 📁 Project Structure
 
-## Laravel Sponsors
+```text
+ExamAce/
+├── app/                # Application logic
+├── bootstrap/          # Framework bootstrapping
+├── config/             # Application configuration
+├── database/           # Migrations and database-related files
+├── public/             # Public assets and entry point
+├── resources/
+│   └── views/           # Blade templates and views
+├── routes/              # Application routes
+├── storage/             # Logs and generated files
+├── tests/               # Automated tests
+├── .env.example         # Example environment configuration
+├── composer.json        # PHP dependencies
+├── package.json         # Frontend dependencies
+└── examace.sql          # Database SQL file
+```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## ⚙️ Getting Started
 
-### Premium Partners
+### Prerequisites
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+Install the following before running the project:
 
-## Contributing
+- PHP version compatible with the project's Laravel dependencies
+- Composer
+- Node.js and npm
+- MySQL
+- Git
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### Installation
 
-## Code of Conduct
+1. Clone the repository:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+   ```bash
+   git clone https://github.com/priyya16/ExamAce.git
+   cd ExamAce
+   ```
 
-## Security Vulnerabilities
+2. Install PHP dependencies:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+   ```bash
+   composer install
+   ```
 
-## License
+3. Create your environment configuration:
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+   ```bash
+   cp .env.example .env
+   ```
+
+   On Windows Command Prompt, use:
+
+   ```cmd
+   copy .env.example .env
+   ```
+
+4. Generate the application key:
+
+   ```bash
+   php artisan key:generate
+   ```
+
+5. Configure your database credentials in `.env` and create the corresponding MySQL database.
+
+6. Set up the database using the project's migrations or SQL import, as appropriate for the current schema. Do not import the SQL dump and run the same migrations blindly, as this may create duplicate tables.
+
+7. Install frontend dependencies and build assets:
+
+   ```bash
+   npm install
+   npm run build
+   ```
+
+8. Start the Laravel development server:
+
+   ```bash
+   php artisan serve
+   ```
+
+9. Open the local URL displayed by Artisan in your browser.
+
+## 🔐 Configuration & Security
+
+- Keep `.env` private and never commit real passwords, application keys, or database credentials.
+- Use `.env.example` to document the required environment variables without real secrets.
+- Review the SQL dump before sharing it publicly, especially if it contains personal data, credentials, or other sensitive information.
+
+## 🧪 Testing
+
+Run the project's automated tests with:
+
+```bash
+php artisan test
+```
+
+Test availability and successful execution depend on the project's current configuration.
+
+## 🔮 Future Improvements
+
+- Add search and filtering across exams and job listings.
+- Improve the user experience on mobile devices.
+- Add clearer categorization and personalized information discovery.
+- Provide screenshots and a live demo when available.
+- Expand automated testing and deployment documentation.
+
+## 👩‍💻 Author
+
+**Priya Pedhadiya**
+
+- GitHub: [@priyya16](https://github.com/priyya16)
+- Repository: [ExamAce](https://github.com/priyya16/ExamAce)
+
+---
+
+Built as an academic web development project.
